@@ -1,0 +1,143 @@
+:root {
+    --dark-primary: black;
+    --theme-secondary: grey;
+    --light-primary: white;
+    --console-font: "Fira Code", "Consolas", "Courier New", monospace;
+    --divs-height: 350px;
+    --divs-width: 420px;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#hiremebtn {
+    padding: 5px 20px;
+    background-color: #fd65c3;
+    color: var(--light-primary);
+    border-radius: 5px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    margin-right: 40px;
+}
+
+#hiremebtn:hover {
+    background-color: #e24b98;
+}
+
+#contact {
+    font-family: var(--console-font);
+    margin-right: 40px;
+}
+
+/* Style for anchor links in the navbar */
+.nav-link {
+    text-decoration: none;
+    color: var(--theme-secondary);
+    margin-left: 40px;
+}
+
+#navlinks a {
+    color: var(--theme-secondary);
+    font-family: var(--console-font);
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: transparent;
+    z-index: 1000;
+    padding: 0 20px;
+    transition: color 0.3s ease;
+}
+
+.navbar-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo {
+    height: 40px;
+}
+
+.nav-text {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: var(--console-font);
+    color: var(--light-primary);
+}
+
+.section {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.dark-theme {
+    background-color: var(--dark-primary);
+    color: var(--light-primary);
+    height: 1300px;
+}
+
+.light-theme {
+    background-color: var(--light-primary);
+    color: var(--dark-primary);
+}
+
+.title {
+    margin-right: auto;
+    margin-top: 160px;
+    margin-bottom: 50px;
+    margin-left: 30px;
+}
+
+.title p {
+    font-family: var(--console-font);
+    color: var(--theme-secondary);
+}
+
+.title h1 {
+    font-size: 60px;
+    font-family: var(--console-font);
+}
+
+.divs {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#left, #right {
+    height: var(--divs-height);
+    width: var(--divs-width);
+    margin: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+#mid {
+    height: var(--divs-height);
+    width: var(--divs-width);
+    background-color: white;
+    border: 2px solid white;
+    border-radius: 20px;
+    margin: 20px;
+}
+
+video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Ensures the video covers the container while maintaining aspect ratio */
+    border-radius: 20px;
+}
