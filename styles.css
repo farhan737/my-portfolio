@@ -119,11 +119,12 @@ body {
 }
 
 #left, #right {
-    height: var(--divs-height);
-    width: var(--divs-width);
-    margin: 20px;
-    position: relative;
-    overflow: hidden;
+  width: 100%;
+  max-width: 420px; /* Adjust as needed */
+  height: auto;
+  margin: 20px;
+  position: relative;
+  overflow: hidden;
 }
 
 #mid {
