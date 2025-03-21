@@ -6,6 +6,14 @@
     <title>CONTACT-FARHAN MD.</title>
     <link rel="stylesheet" href="contact.css">
     <link rel="icon" type="image/png" sizes="16x16" href="title logo.png">
+    <!-- EmailJS SDK -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            // Initialize EmailJS with your public key
+            emailjs.init("ujPcNqlxsQLJFHqrh");
+        })();
+    </script>
 </head>
 <body>
     <nav class="navbar">
@@ -13,8 +21,9 @@
             <img id="logo" src="dark-logo.gif" alt="Logo" class="logo">
             <span id="nav-text" class="nav-text">Farhan Md.</span>
             <div id="navlinks">
-                <a href="#" class="nav-link">CODE</a>
-                <a href="#" class="nav-link">MEDIA</a>
+                <a href="index.html" class="nav-link">HOME</a>
+                <a href="code.html" class="nav-link">CODE</a>
+                <a href="media.html" class="nav-link">MEDIA</a>
             </div>
         </div>
         <div>
@@ -24,12 +33,132 @@
             </a>
         </div>
     </nav>
-    <div class="contactlinks" style="margin-top: 100px;">
-        <img src="xlogo-white.png"><span> farhan_mohammad</span>
-        <img src="iglogo-white.png"><span> farhan_2oo3</span>
-        <img src="fblogo-white.png"><span> Farhan Mohammad</span>
-        <img src="gmaillogo-white.png"><span> mdfarhan93933@gmail.com</span>
-        <img src="phonelogo-white.png"><span> +91 9393396691</span>
+    
+    <div class="contact-container">
+        <div class="contact-header">
+            <h1>Get In Touch</h1>
+            <p>Feel free to reach out through any of these platforms</p>
+        </div>
+        
+        <div class="contact-links-container">
+            <div class="contact-link-item">
+                <div class="icon-container">
+                    <img src="xlogo-white.png" alt="Twitter">
+                </div>
+                <div class="contact-info">
+                    <h3>Twitter</h3>
+                    <span>farhan_mohammad</span>
+                </div>
+            </div>
+            
+            <div class="contact-link-item">
+                <div class="icon-container">
+                    <img src="iglogo-white.png" alt="Instagram">
+                </div>
+                <div class="contact-info">
+                    <h3>Instagram</h3>
+                    <span>farhan_2oo3</span>
+                </div>
+            </div>
+            
+            <div class="contact-link-item">
+                <div class="icon-container">
+                    <img src="fblogo-white.png" alt="Facebook">
+                </div>
+                <div class="contact-info">
+                    <h3>Facebook</h3>
+                    <span>Farhan Mohammad</span>
+                </div>
+            </div>
+            
+            <div class="contact-link-item">
+                <div class="icon-container">
+                    <img src="gmaillogo-white.png" alt="Email">
+                </div>
+                <div class="contact-info">
+                    <h3>Email</h3>
+                    <span>mdfarhan93933@gmail.com</span>
+                </div>
+            </div>
+            
+            <div class="contact-link-item">
+                <div class="icon-container">
+                    <img src="phonelogo-white.png" alt="Phone">
+                </div>
+                <div class="contact-info">
+                    <h3>Phone</h3>
+                    <span>+91 9393396691</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="contact-form">
+            <h2>Send a Message</h2>
+            <form id="contact-form">
+                <div class="form-group">
+                    <input type="text" id="name" name="from_name" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="email" name="from_email" placeholder="Your Email" required>
+                </div>
+                <div class="form-group">
+                    <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+                <div id="form-status" class="form-status"></div>
+            </form>
+        </div>
     </div>
+    
+    <footer class="footer">
+        <p>&copy; 2025 Farhan Mohammad. All rights reserved.</p>
+    </footer>
+
+    <script type="text/javascript">
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            
+            // Show sending status
+            const formStatus = document.getElementById('form-status');
+            formStatus.textContent = 'Sending...';
+            formStatus.className = 'form-status sending';
+            
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+            
+            // Prepare template parameters
+            const templateParams = {
+                to_name: "Farhan Mohammad",
+                to_email: "mdfarhan93933@gmail.com",
+                from_name: name,
+                from_email: email,
+                message: `Email: ${email}\n\n${message}`
+            };
+            
+            // Send the email using EmailJS
+            emailjs.send('service_ad3hf37', 'template_9wct5wl', templateParams)
+                .then(function() {
+                    // Success message
+                    formStatus.textContent = 'Message sent successfully!';
+                    formStatus.className = 'form-status success';
+                    
+                    // Reset the form
+                    document.getElementById('contact-form').reset();
+                    
+                    // Clear success message after 5 seconds
+                    setTimeout(function() {
+                        formStatus.textContent = '';
+                        formStatus.className = 'form-status';
+                    }, 5000);
+                }, function(error) {
+                    // Error message
+                    formStatus.textContent = 'Failed to send message. Please try again.';
+                    formStatus.className = 'form-status error';
+                    console.error('EmailJS error:', error);
+                });
+        });
+    </script>
 </body>
 </html>

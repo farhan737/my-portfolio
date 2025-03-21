@@ -1,0 +1,229 @@
+/* Code Page Specific Styles */
+
+/* Hero Section */
+.code-hero {
+    background-color: var(--dark-primary);
+    color: var(--light-primary);
+    padding: 120px 20px 60px;
+    text-align: center;
+}
+
+.code-hero-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.code-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-family: var(--console-font);
+}
+
+.code-hero p {
+    font-size: 1.2rem;
+    opacity: 0.8;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Code Section */
+.code-section {
+    padding: 80px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Repository Grid */
+.repo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 80px;
+    grid-auto-flow: row;
+    grid-row-gap: 80px;
+}
+
+/* Repository Card */
+.repo-card {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    padding: 30px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.repo-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+}
+
+.repo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.repo-title {
+    font-family: var(--console-font);
+    font-size: 1.5rem;
+    margin: 0;
+    color: var(--dark-primary);
+}
+
+.repo-visibility {
+    background-color: rgba(0, 0, 0, 0.05);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #555;
+}
+
+.repo-description {
+    color: #555;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    flex-grow: 1;
+}
+
+.repo-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+.tech-tag {
+    background-color: #f0f0f0;
+    color: #333;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: var(--console-font);
+}
+
+.repo-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.repo-stats {
+    display: flex;
+    gap: 15px;
+}
+
+.repo-stat {
+    display: flex;
+    align-items: center;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.repo-stat i {
+    font-size: 1.1rem;
+    margin-right: 5px;
+}
+
+.repo-link {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: var(--dark-primary);
+    color: var(--light-primary);
+    border-radius: 5px;
+    text-decoration: none;
+    font-family: var(--console-font);
+    font-size: 0.9rem;
+    transition: background-color 0.3s ease;
+}
+
+.repo-link:hover {
+    background-color: #333;
+}
+
+/* More Projects Section */
+.more-projects {
+    text-align: center;
+    padding: 40px 20px;
+    background-color: #f8f9fa;
+    border-radius: 15px;
+}
+
+.more-projects h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: var(--dark-primary);
+}
+
+.more-projects p {
+    color: #555;
+    margin-bottom: 25px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.github-profile-btn {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 25px;
+    background-color: var(--dark-primary);
+    color: var(--light-primary);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.github-profile-btn:hover {
+    background-color: #333;
+    transform: translateY(-3px);
+}
+
+.github-profile-btn img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    filter: invert(1);
+}
+
+/* Active Navigation Link */
+.nav-link.active {
+    color: #fd65c3;
+    font-weight: 600;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .code-hero h1 {
+        font-size: 2.5rem;
+    }
+    
+    .repo-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .code-hero {
+        padding: 100px 15px 40px;
+    }
+    
+    .code-hero h1 {
+        font-size: 2rem;
+    }
+    
+    .code-section {
+        padding: 40px 15px;
+    }
+    
+    .repo-card {
+        padding: 20px;
+    }
+}

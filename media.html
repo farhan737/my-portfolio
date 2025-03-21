@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Gallery | FARHAN MD.</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="media.css">
+  <link rel="icon" type="image/png" sizes="16x16" href="title logo.png">
+  <meta name="description" content="Media gallery showcasing 3D models and graphic designs by Nizam Farhan Mohammad">
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-left">
+      <img id="logo" src="dark-logo.gif" alt="Logo" class="logo">
+      <span id="nav-text" class="nav-text">Farhan Md.</span>
+      <div id="navlinks">
+        <a href="index.html" class="nav-link">HOME</a>
+        <a href="code.html" class="nav-link">CODE</a>
+        <a href="media.html" class="nav-link active">MEDIA</a>
+      </div>
+    </div>
+    <div>
+      <a id="contact" href="contact.html" class="nav-link">CONTACT</a>
+      <a href="hire.html">
+        <button id="hiremebtn">HIRE ME</button>
+      </a>
+    </div>
+  </nav>
+  
+  <div class="media-hero">
+    <div class="media-hero-content">
+      <h1>Media Gallery</h1>
+      <p>Explore my 3D models, graphic designs, and creative work</p>
+    </div>
+  </div>
+  
+  <div class="media-section">
+    <div class="gallery-container">
+      <!-- Images will be dynamically loaded here -->
+      <div class="loading-indicator">
+        <div class="spinner"></div>
+        <p>Loading gallery...</p>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Lightbox for image viewing -->
+  <div class="lightbox" id="lightbox">
+    <div class="lightbox-content">
+      <span class="close-lightbox">&times;</span>
+      <img id="lightbox-image" src="" alt="Enlarged image">
+      <div class="lightbox-caption" id="lightbox-caption"></div>
+      <div class="lightbox-nav">
+        <button id="prev-button" class="nav-button"><i class="material-icons">arrow_back</i></button>
+        <button id="next-button" class="nav-button"><i class="material-icons">arrow_forward</i></button>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="footer">
+    <div class="footer-content">
+      <div class="footer-logo">
+        <img src="dark-logo.gif" alt="Logo" class="footer-logo-img">
+        <span class="footer-logo-text">Farhan Md.</span>
+      </div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="code.html">Code</a>
+        <a href="media.html">Media</a>
+        <a href="contact.html">Contact</a>
+      </div>
+      <div class="footer-social">
+        <a href="https://github.com/farhan737" target="_blank" class="social-icon">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" alt="GitHub">
+        </a>
+        <a href="#" target="_blank" class="social-icon">
+          <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/linkedin/linkedin-original.svg" alt="LinkedIn">
+        </a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 Nizam Farhan Mohammad. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+  <script src="media-gallery.js"></script>
+</body>
+</html>
