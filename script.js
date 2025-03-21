@@ -2,9 +2,17 @@ document.addEventListener("DOMContentLoaded", function() {
     // Initialize navbar behavior
     initNavbar();
     
-    // Add scroll event listener
-    document.addEventListener("scroll", handleScroll);
+    // Add scroll event listener only if we're not on code.html
+    if (!isCodePage()) {
+        document.addEventListener("scroll", handleScroll);
+    }
 });
+
+function isCodePage() {
+    const currentPath = window.location.pathname;
+    const pageName = currentPath.split('/').pop() || 'index.html';
+    return pageName === 'code.html';
+}
 
 function initNavbar() {
     // Set initial navbar state based on page
@@ -13,7 +21,14 @@ function initNavbar() {
     
     if (!logo || !navText) return;
     
-    // Default state - dark theme
+    // If we're on code.html, ensure we use dark logo and white text
+    if (isCodePage()) {
+        logo.src = "dark-logo.gif";
+        navText.style.color = "#fff";
+        return;
+    }
+    
+    // Default state for other pages - dark theme
     logo.src = "dark-logo.gif";
     navText.style.color = "#fff";
     
@@ -22,6 +37,9 @@ function initNavbar() {
 }
 
 function handleScroll() {
+    // Skip this function entirely for code.html
+    if (isCodePage()) return;
+    
     const logo = document.getElementById("logo");
     const navText = document.getElementById("nav-text");
     const darkSection = document.querySelector(".dark-theme");
