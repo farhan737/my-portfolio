@@ -337,6 +337,12 @@ video {
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     white-space: nowrap;
+    width: fit-content;
+}
+
+.tech-scroller .scroller-content {
+    display: flex;
+    width: max-content;
 }
 
 .tech-scroller.left .scroller-content {
@@ -381,13 +387,13 @@ video {
         transform: translateX(0);
     }
     100% {
-        transform: translateX(-50%);
+        transform: translateX(calc(-50% - 40px));
     }
 }
 
 @keyframes scroll-right {
     0% {
-        transform: translateX(-50%);
+        transform: translateX(calc(-50% - 40px));
     }
     100% {
         transform: translateX(0);
@@ -574,7 +580,9 @@ video {
 .social-icon img {
     width: 24px;
     height: 24px;
-    filter: invert(1);
+    filter: brightness(0) invert(1);
+    -webkit-filter: brightness(0) invert(1);
+    opacity: 0.9;
 }
 
 .footer-bottom {
