@@ -6,12 +6,30 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Elements
     const galleryContainer = document.querySelector('.gallery-container');
+    
+    // Exit early if we're not on the media page
+    if (!galleryContainer) return;
+    
     const lightbox = document.getElementById('lightbox');
     const lightboxImage = document.getElementById('lightbox-image');
     const lightboxCaption = document.getElementById('lightbox-caption');
     const closeLightbox = document.querySelector('.close-lightbox');
     const prevButton = document.getElementById('prev-button');
     const nextButton = document.getElementById('next-button');
+    
+    // Add error handling for missing elements
+    if (!lightbox || !lightboxImage || !lightboxCaption || !closeLightbox || !prevButton || !nextButton) {
+        console.error('Missing required lightbox elements');
+        if (galleryContainer) {
+            galleryContainer.innerHTML = `
+                <div class="error-message">
+                    <h3>Gallery initialization error</h3>
+                    <p>Some required elements are missing. Please try again later.</p>
+                </div>
+            `;
+        }
+        return;
+    }
     
     // Gallery state
     let images = [];

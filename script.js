@@ -4,6 +4,9 @@ document.addEventListener("scroll", () => {
     const darkSection = document.querySelector(".dark-theme");
     const lightSection = document.querySelector(".light-theme");
 
+    // Add error handling to prevent issues on GitHub Pages
+    if (!logo || !navText || !darkSection || !lightSection) return;
+
     const darkRect = darkSection.getBoundingClientRect();
     const lightRect = lightSection.getBoundingClientRect();
 
